@@ -75,6 +75,10 @@ physics-teacher/
 │   ├── output-templates.md          # 任务模板与复合方案模板
 │   ├── physics-knowledge.md         # 初中知识库、错误概念与诊断任务卡
 │   ├── task-routing.md              # 相近任务的选择规则
+│   ├── curriculum-framework.md       # 课程标准总体框架与引用等级
+│   ├── curriculum-junior-high.md     # 义务教育物理课程标准对齐摘要
+│   ├── curriculum-senior-high.md     # 普通高中物理课程标准对齐摘要
+│   ├── curriculum-alignment.md       # 16 个工作流的课程标准对齐映射
 │   ├── physics-safety.md            # 易混概念、危险表述与实验安全
 │   └── examples.md                  # 典型输入输出示例
 └── evals/
@@ -82,6 +86,7 @@ physics-teacher/
     ├── README.md                    # 评测与回归说明
     ├── baseline-2026-09-19.md       # 历史基线成绩
     ├── quality/                      # 教师质量评价标准
+    ├── curriculum-alignment.md       # 课程标准对齐回归用例
     └── runs/                        # 已完成的评测记录
 ```
 
@@ -96,6 +101,7 @@ physics-teacher/
 - 是否能识别教案中的物理错误
 - 是否区分初中与高中学段边界
 - 是否正确使用知识库，且在没有条目时不擅自编造
+- 课程标准要求是否真正进入目标、活动、学习证据与评价
 
 完整说明见 [`evals/README.md`](evals/README.md)，任务规则见 [`SKILL.md`](SKILL.md)。
 
