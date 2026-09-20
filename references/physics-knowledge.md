@@ -2,9 +2,27 @@
 
 项目知识层中**经过人工核验**的条目。本文件替代了原先手写的初中错误概念表。
 
-> **来源**：`physics-teacher-agent-skills` 仓库 `knowledge/`——
-> 概念/错误概念种子卡 v0.2、诊断任务卡 v0.3（2026-09-18）；
-> QLM LabPath K-16 STEM Misconceptions（CC-BY-4.0，2026-09-18 导入）。
+```yaml
+provenance:
+  - source_id: physics-teacher-agent-skills-knowledge
+    source_name: physics-teacher-agent-skills knowledge
+    source_url: 未记录（当前仓库未提供可核验 URL）
+    license: 项目内部资料；外部再分发许可需核验
+    version: misconception-seed-v0.2 / diagnostic-task-v0.3
+    retrieved_at: 2026-09-18
+    transformation: 人工核验后整理为本文件的概念卡、诊断任务卡与映射表
+    attribution: physics-teacher-agent-skills
+    verification_status: partial
+  - source_id: qlm-labpath-k16-stem-misconceptions
+    source_name: QLM LabPath K-16 STEM Misconceptions
+    source_url: 未记录（当前仓库未提供可核验 URL）
+    license: CC-BY-4.0（以原始资料许可为准，发布前需核验）
+    version: 2026-09-18 import
+    retrieved_at: 2026-09-18
+    transformation: 仅保留可映射且标注 partial mapping 的条目，未映射记录不强行对应
+    attribution: QLM LabPath
+    verification_status: partial
+```
 
 > **范围**：目前**只有初中**。高中部分仍见 `physics-safety.md` 第四节的高中表。
 
@@ -313,3 +331,45 @@ QLM 数据集条目 → 本项目概念的映射。数据集自标为「partial 
 - **没有对应条目就说没有**：本库只覆盖初中的部分主题，高中尚未建立。
 - 引用此处内容**不必标注出处**（项目自有数据）；但**不得**据此编造课标条款、教材页码或文献。
 - 数据更新时同步更新本文件，**不要在别处再抄一份**。
+
+## 七、统一知识条目结构
+
+新增或迁移条目时，优先使用以下字段；现有叙述式卡片按主题逐步迁移，不为迁移而虚构缺失信息：
+
+```yaml
+concept:
+grade:
+topic:
+prerequisites:
+core_statement:
+representations:
+common_misconceptions:
+diagnostic_signals:
+diagnostic_tasks:
+interventions:
+experiments:
+boundary_conditions:
+related_concepts:
+provenance:
+```
+
+其中 `boundary_conditions` 必须写明结论的适用条件、理想化或不能外推的范围；没有可靠信息时写「未建立」，不猜测。
+
+迁移示例（仅示意字段，不替代上面的核验卡）：
+
+```yaml
+concept: buoyancy
+grade: 初中
+topic: 浮力
+prerequisites: [force, pressure, pressure-liquid]
+core_statement: 浮力取决于排开介质的情况与介质密度，不能只由物重判断
+representations: [受力图, 测力计示数差, 排开液体体积]
+common_misconceptions: [物体越重浮力一定越大]
+diagnostic_signals: [只比较物重而忽略排开体积]
+diagnostic_tasks: [同体积不同材料与同材料不同体积对比]
+interventions: [先固定排开体积，再交换控制变量]
+experiments: [测力计与溢水杯对比实验]
+boundary_conditions: 同一液体、测量范围和仪器精度内；不外推到未控制密度或状态的情形
+related_concepts: [pressure, force-analysis]
+provenance: qlm-labpath-k16-stem-misconceptions / partial mapping
+```
