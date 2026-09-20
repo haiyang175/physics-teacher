@@ -1,6 +1,7 @@
 # Curriculum Alignment Quality
 
 - **Standard Accuracy**：标准表述、版本和引用等级是否准确；未核验时是否避免伪造。
+- **Version Boundary**：能区分纯“2022 年版”和当前“2022 年版 2025 年修订”来源；未核验纯 2022 年原文时不提供逐条引文、页码或条款号。
 - **Alignment**：标准要求是否真正改变目标、活动、问题、任务或评价，而非只加开头说明。
 - **Evidence**：核心素养与学业要求是否落实为可观察学生表现和学习证据。
 - **Assessment Consistency**：评价是否与课程目标、学习活动、学业要求和评分标准一致。
